@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary-green: rgb(0, 200, 0);
+  --clr-secondary-green: lightgreen;
+  --clr-primary-red: red;
+  --bg-col: rgba(2, 46, 54, 0.934);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: black;
+}
+
+#home {
+  width: 20vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(2, 46, 54, 0.934);
+  padding: 0px 30px;
+  color: white;
+}
+
+#home h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#home h2 {
+  font-size: 2.5rem;
+}
+
+#home span {
+  font-weight: bold;
+  font-size: small;
+}
+
+#home .trans-box {
+  align-self: center;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  height: 100px;
+  width: 100%;
+  padding: 15px 0px;
+  border-radius: 15px;
+  margin: 20px 0;
+  background-color: rgba(6, 116, 141, 0.702);
+  box-shadow: 2px 2px 7px black;
+}
+
+#home .trans-box p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+#home .trans-box div:nth-child(n + 1) p {
+  color: var(--clr-primary-green);
+}
+#home .trans-box div:nth-child(n + 2) p {
+  color: var(--clr-primary-red);
+}
+
+.v-rule {
+  height: 100%;
+  width: 1px;
+  background-color: black;
+}
+
+.history h3,
+.trans h3 {
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
+}
+
+.history,
+.trans {
+  margin: 20px 0;
+}
+
+.history > div {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+  padding: 10px 10px;
+  box-shadow: 2px 2px 7px black;
+  margin: 15px 0;
+}
+.history > div span {
+  font-size: medium !important;
+  font-weight: normal !important;
+}
+.history > div button {
+  cursor: pointer;
+  height: 70%;
+  width: 25px;
+  position: absolute;
+  left: -25px;
+  border: none;
+  background-color: var(--clr-primary-red);
+  font-size: medium;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.history > div:hover button,
+.history > div button:hover {
+  opacity: 1;
+}
+.history .pos::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 100%;
+  background-color: var(--clr-primary-green);
+  width: 6px;
+}
+.history .neg::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 100%;
+  background-color: var(--clr-primary-red);
+  width: 6px;
+}
+
+#home .trans form {
+  display: flex;
+  flex-direction: column;
+}
+
+#home .trans form input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#home .trans form label {
+  font-size: small;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+#home .trans form .btn-chg {
+  width: 60%;
+  height: 40px;
+  align-self: center;
+  display: flex;
+  margin: 15px 0;
+  border: 1px solid black;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+}
+
+#home .trans form .btn-chg div {
+  cursor: pointer;
+  width: 50%;
+  height: 100%;
+  border: none;
+  background-color: rgba(6, 116, 141, 0.702);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: small;
+  color: white;
+  text-shadow: 0 0 2px black, 0 0 2px black;
+}
+#home .trans form .btn-chg div:nth-of-type(0n + 1) {
+  border-right: 1px solid black;
+}
+#home .trans form .btn-chg div:nth-of-type(n + 2) {
+  border-left: 1px solid black;
+}
+#home .trans form .btn-chg .inc.changer {
+  background-color: var(--clr-primary-green);
+}
+#home .trans form .btn-chg .exp.changer {
+  background-color: var(--clr-primary-red);
+}
+#home .trans form small {
+  color: gray;
+  margin-top: -5px;
+  align-self: center;
+}
+#home .trans form button[type="submit"] {
+  padding: 10px;
+  align-self: center;
+  width: 60%;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: rgba(6, 116, 141, 0.702);
+  box-shadow: 2px 2px 7px black;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#home .trans form button[type="submit"]:hover {
+  background-color: white;
+  color: black;
+}
+
+@media screen and (max-width: 900px) {
+  #home {
+    padding: 50px 0;
+    width: 50vw;
+  }
+  #home .trans-box p {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .history > div button {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 640px) {
+  #home {
+    width: 80vw;
+  }
+}
